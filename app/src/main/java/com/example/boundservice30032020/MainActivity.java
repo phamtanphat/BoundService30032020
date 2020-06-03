@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             Toast.makeText(MainActivity.this, "Bat", Toast.LENGTH_SHORT).show();
+            MyBoundService.MyBinder myBinder = (MyBoundService.MyBinder) service;
+            myBoundService = myBinder.getService();
+            Toast.makeText(myBoundService, myBoundService.getCount() + "", Toast.LENGTH_SHORT).show();
         }
 
         @Override

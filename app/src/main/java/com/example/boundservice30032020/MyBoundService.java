@@ -22,7 +22,7 @@ public class MyBoundService extends Service {
     public IBinder onBind(Intent intent) {
         mCount = intent.getIntExtra("so", -1);
         for (int i = 0 ; i < 10 ; i++){
-            mCount += i;
+            mCount = i++;
         }
         return new MyBinder();
     }
